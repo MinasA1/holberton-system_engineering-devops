@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# print Holberton school 10 times if 9 say hi
+i=1
+while ((i < 11))
+do
+	if ((i == 9))
+	then
+		echo "Hi"
+	else
+		echo "Holberton School"
+	fi
+	((i++))
+done

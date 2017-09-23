@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# display time for 12 hours and 59 min
+minsum=1
+mincounter=1
+hours=0
+echo "Hour: 0"
+while ((minsum < 780))
+do
+	((hours = minsum / 60))
+	if ((mincounter == 60))
+	then
+		echo "Hour: $hours"
+		((mincounter = 0))
+	else
+		echo "$mincounter"
+	fi
+	((minsum++))
+	((mincounter++))
+done
