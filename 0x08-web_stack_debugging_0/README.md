@@ -1,0 +1,1 @@
+## debugg a docker container running appache server
