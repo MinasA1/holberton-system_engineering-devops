@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#installs nginx server and sets default content to
+#Holberton School
+ssh ubuntu@142.44.167.26 'sudo apt-get update && sudo apt-get -y install nginx'
+ssh ubuntu@142.44.167.26 'sudo rm /usr/share/nginx/html/index.html'
+ssh ubuntu@142.44.167.26 'sudo ufw allow "Nginx HTTP"'
+ssh ubuntu@142.44.167.26 'echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html'
