@@ -2,4 +2,4 @@
 #installs nginx server and sets default content to Holberton Shool
 sudo apt-get update && sudo apt-get -y install nginx
 echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
-
+sudo serviice nginx start
