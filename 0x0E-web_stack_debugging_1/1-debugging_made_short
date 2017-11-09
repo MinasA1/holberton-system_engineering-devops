@@ -2,4 +2,4 @@
 #2fix listening to port 80
 cat /etc/nginx/sites-available/default > /etc/nginx/sites-enabled/default
 service nginx restart
-service nginx stop
+rm /run/nginx.pid
