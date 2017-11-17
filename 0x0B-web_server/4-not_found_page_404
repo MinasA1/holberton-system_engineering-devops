@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# install nginx and add a custom error
+
+
+apt-get -y update
+apt-get -y install nginx
+service nginx start
+
+mkdir -p /var/www/holberton
+echo "Ceci n'est pas une page" > /var/www/holberton/custom_error.html
+
+echo "http {
+     server {
+     	    listen 80;
+	    	   root /var/www/holberton;
+		   	index holberton.html;
+			      rewrite ^/redirect_me$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+			      	      error_page 404 /custom_error.html;
+				      		 location /custom_error.html{
+								internal;
+									}
+									}
+}
+events {
+}" > /etc/nginx/nginx.conf
+
+nginx -s reload

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# install nginx and add redirection
+
+apt-get -y update
+apt-get -y install nginx
+service nginx start
+
+mkdir -p /var/www/holberton
+echo "Holberton School" > /var/www/holberton/holberton.html
+
+echo "http {
+     server {
+     	    listen 80;
+	    	   root /var/www/holberton;
+		   	index holberton.html;
+			      rewrite ^/redirect_me/?$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
+			      }
+}
+events {
+}" > /etc/nginx/nginx.conf
+
+nginx -s reload
