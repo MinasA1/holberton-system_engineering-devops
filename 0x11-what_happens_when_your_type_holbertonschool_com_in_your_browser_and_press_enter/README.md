@@ -1,0 +1,1 @@
+## What Happens when you type holbertonschool.com
