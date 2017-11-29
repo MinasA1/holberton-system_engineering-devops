@@ -1,6 +1,4 @@
 sudo ufw enable
-sudo ufw deny from any to any
-sudo ufw allow 22/ssh
 sudo ufw allow 22/tcp
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
