@@ -5,7 +5,7 @@ if [ "$#" -eq 0 ]; then
 	exit 0
 fi
 
-shellcheck disable=SC2086
+#shellcheck disable=SC2086
 
 dig_it(){
 	s=$(dig "$1.$2" | grep -A1 'ANSWER SECTION:')
