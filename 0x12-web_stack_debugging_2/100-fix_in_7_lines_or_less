@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#run whoami as the given user
+if [ "$#" -ne 1 ]; then
+	echo "Usage: ./0-iamsomeonelese <username>"
+else
+	sudo -u "$1" whoami
+fi
