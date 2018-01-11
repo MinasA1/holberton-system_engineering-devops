@@ -11,7 +11,7 @@ def recurse(subreddit, hot_list=[], after=None):
         api = '{}&after={}'.format(api, after)
     r = get(api, headers=header)
     if r.status_code > 200:
-        return hot_list
+        return None
     r = r.json()
     child = r['data']['children']
     after = r['data']['after']
