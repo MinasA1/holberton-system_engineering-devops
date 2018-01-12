@@ -11,7 +11,6 @@ def count_words(subreddit, word_list, after=None, counts={}, match=False):
         api = '{}&after={}'.format(api, after)
     r = get(api, headers=header, allow_redirects=False)
     if r.status_code > 200:
-        print()
         return None
     r = r.json()
     child = r['data']['children']
