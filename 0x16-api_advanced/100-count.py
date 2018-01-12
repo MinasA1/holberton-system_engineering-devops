@@ -15,7 +15,7 @@ def count_words(subreddit, word_list, after=None, counts={}):
     r = r.json()
     child = r['data']['children']
     after = r['data']['after']
-    word_list = list(word_list)
+    word_list = list(set(word_list))
     for i in word_list:
         if not counts.get(i):
             counts[i] = 0
@@ -25,7 +25,7 @@ def count_words(subreddit, word_list, after=None, counts={}):
         title = title.split()
         for word in word_list:
             for w in title:
-                if w == word:
+                if w == word.lower():
                     counts[word] += 1
     if after:
         return count_words(subreddit, word_list, after, counts)
