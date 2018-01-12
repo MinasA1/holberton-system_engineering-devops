@@ -24,8 +24,9 @@ def count_words(subreddit, word_list, after=None, counts={}):
         title = title.lower()
         title = title.split()
         for word in word_list:
+            word = word.lower()
             for w in title:
-                if w == word.lower():
+                if w == word:
                     counts[word] += 1
     if after:
         return count_words(subreddit, word_list, after, counts)
